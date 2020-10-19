@@ -1,13 +1,15 @@
-name: unit_tests
+name: unit_tests_and_check_lint
 on: [push]
 jobs:
-  run_unit_tests:
+  run_unit_tests_and_check_lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - run: npm install -g yarn
-      - name: yarn install, build and test
+      - name: yarn install and test
         run: |
           yarn install
           yarn test:unit
+      - name: check lint
+        run: yarn lint
