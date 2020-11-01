@@ -1,7 +1,7 @@
 import { IArticlesService, IArticlesServiceMock } from "./articles";
 
 export interface IProvider {
-  article: IArticlesService;
+  articles: IArticlesService;
 }
 
 export interface IProviderMock {

@@ -1,12 +1,15 @@
 import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
+import { makeStore } from "./store";
+import { prepareServices , prepareStorage} from './ui/plugins'
 
 Vue.config.productionTip = false;
 
+const store = makeStore()
+
+prepareServices(store)
+prepareStorage(store)
+
 new Vue({
-  router,
   store,
-  render: h => h(App)
+  render: h => h()
 }).$mount("#app");

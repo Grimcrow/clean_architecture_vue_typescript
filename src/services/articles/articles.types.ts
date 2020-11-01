@@ -8,6 +8,6 @@ export interface IArticlesService {
 
 export interface IArticlesServiceMock {
   getAll: jest.Mock<IArticleData[]>;
-  getOneBId: jest.Mock<IArticle | undefined>;
+  getOneById: jest.Mock<IArticle | undefined>;
   createComment: jest.Mock<IArticle>;
 }
